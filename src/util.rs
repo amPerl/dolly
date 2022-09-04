@@ -62,8 +62,8 @@ pub fn look_at<H: Handedness>(forward: Vec3) -> Quat {
             let up = H::up_from_right_and_forward(right, forward);
             Some(Quat::from_mat3(&Mat3::from_cols(
                 right,
+                forward * H::FORWARD_Y_SIGN,
                 up,
-                forward * H::FORWARD_Z_SIGN,
             )))
         })
         .unwrap_or_default()

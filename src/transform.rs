@@ -32,12 +32,12 @@ impl<H: Handedness> Transform<H> {
         self.rotation * Vec3::X
     }
 
-    /// +Y
+    /// +Z
     pub fn up(&self) -> Vec3 {
-        self.rotation * Vec3::Y
+        self.rotation * Vec3::Z
     }
 
-    /// +/-Z
+    /// +/-Y
     pub fn forward(&self) -> Vec3 {
         self.rotation * H::FORWARD
     }
